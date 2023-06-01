@@ -1,9 +1,12 @@
 package com.example.slm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DisplayMessage {
-    public String message = "Everything works as expected";
+
+    @Autowired
+    private Message message;
 
     /**
      * Display a message.*
@@ -13,6 +16,7 @@ public class DisplayMessage {
     @RequestMapping("api/message")
     public String displayMsg() {
 
-        return message;
+        return message.getMessage();
     }
+
 }

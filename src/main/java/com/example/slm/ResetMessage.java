@@ -1,9 +1,13 @@
 package com.example.slm;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ResetMessage {
-    public String message = "Everything works as expected";
+
+    @Autowired
+    private Message message;
+
     /**
      * Reset the message.
      *
@@ -13,7 +17,7 @@ public class ResetMessage {
     @RequestMapping("api/message/reset")
     public String resetMsg() {
 
-        message = "Everything works as expected";
+        message.setMessage("Everything works as expected");
         return "ok";
     }
 
