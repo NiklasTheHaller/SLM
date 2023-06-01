@@ -39,7 +39,7 @@ class SlmApplicationTests {
     void setMsgTest(){
         String newMessage = "Test Message";
 
-        message.setMessage(newMessage);
+        setMessage.setMsg(newMessage);
 
         verify(message).setMessage(newMessage);
 
